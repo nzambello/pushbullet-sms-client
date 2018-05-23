@@ -1,0 +1,37 @@
+@import '../../scss/variables';
+
+.list-group {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    * {
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.list-group-header {
+    padding: 10px;
+}
+
+.form-control {
+    display: inline-block;
+    width: 100%;
+    min-height: 1.5625rem;
+    padding: 5px 10px;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    background-color: $chrome-color;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    outline: none;
+  
+    &:focus {
+        border-color: $focus-input-color;
+        box-shadow: 0 0 0 1px $focus-input-color;
+    }
+  }

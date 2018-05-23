@@ -1,0 +1,45 @@
+@import '../../scss/variables';
+
+.list-group-item {
+    padding: 10px;
+    font-size: 0.75rem;
+    color: #414142;
+    border-top: 1px solid $border-color;
+    display: flex;
+
+    &:first-child {
+        border-top: 0;
+    }
+  
+    &.active,
+    &.selected {
+        color: #fff;
+        background-color: $active-color;
+    }
+
+    img {
+        width: 2rem;
+        height: 2rem;
+        flex: 0 0 auto;
+    }
+}
+
+.media-object {
+    margin-top: 3px;
+
+    &.pull-left {
+        margin-right: 10px
+    }
+
+    &.pull-right {
+        margin-left: 10px
+    }
+}
+
+.media-body {
+    overflow: hidden;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
