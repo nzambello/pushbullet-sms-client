@@ -17,10 +17,9 @@ function createWindow() {
   } else {
     win.loadURL(
       url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, '/build/index.html'),
         protocol: 'file:',
         slashes: true,
-        baseURLForDataURL: '/build/',
       }),
     )
   }

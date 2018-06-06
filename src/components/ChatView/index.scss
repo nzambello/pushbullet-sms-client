@@ -7,6 +7,8 @@
     overflow: hidden;
     background: #FFF;
     border-left: 1px solid #CCC;
+    display: flex;
+    flex-flow: column nowrap;
 
     @media (max-width: $mobile-view-width) {
         width: 100vw;
@@ -17,7 +19,7 @@
     }
 
     > * {
-        padding: 0.75rem 1.5rem;
+        padding: 0.75rem 1rem;
     }
 
     .chat-header {
@@ -53,5 +55,11 @@
                 box-shadow: 0 0 10px #e3e3e3, inset 0 0 5px #ddd;
             }
         }
+    }
+
+    .chat-sms-list {
+        overflow: scroll;
+        display: flex;
+        flex-flow: column-reverse;
     }
 }

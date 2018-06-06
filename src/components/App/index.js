@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { messages } from '../../messages'
 import ChatList from '../ChatList'
 import ChatWrapper from '../ChatWrapper'
+import Notifications from '../Notifications'
 import './index.css'
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app-wrapper">
+          <Notifications />
           <ChatList messages={this.state.messages} />
           <Route path="/threads/:id" component={chat} />
         </div>

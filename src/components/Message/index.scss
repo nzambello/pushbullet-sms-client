@@ -1,0 +1,32 @@
+@import '../../scss/variables';
+
+.message-wrapper {
+    padding: 0.5rem;
+
+    .message-body {
+        width: 70%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        border-radius: 5px;
+
+        &.outgoing {
+            margin-left: auto;
+            text-align: right;
+            background: #eee;
+            border-bottom-right-radius: 0;
+        }
+
+        &.incoming {
+            margin-right: auto;
+            background: #559ff9;
+            color: #FFF;
+            border-top-left-radius: 0;
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+    }
+}

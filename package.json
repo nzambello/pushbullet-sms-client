@@ -1,8 +1,10 @@
 {
   "name": "pushbullet-sms-client",
   "version": "0.1.0",
+  "description": "An Electron/React-based Pushbullet client for SMS",
   "private": true,
   "main": "main.js",
+  "homepage": "./",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.19.1",
@@ -47,6 +49,22 @@
     "prettier-all": "prettier --write '**/*.{js,json,css}'",
     "precommit": "lint-staged",
     "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nzambello/pushbullet-sms-client.git"
+  },
+  "keywords": [
+    "pushbullet",
+    "javascript",
+    "electron",
+    "react",
+    "sms"
+  ],
+  "author": "Nicola Zambello <nzambello@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nzambello/pushbullet-sms-client/issues"
   },
   "lint-staged": {
     "*.{js,json,css}": [
