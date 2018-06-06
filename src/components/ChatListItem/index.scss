@@ -1,45 +1,48 @@
 @import '../../scss/variables';
+@import '../../scss/base';
 
 .list-group-item {
-    padding: 10px;
     font-size: 0.75rem;
     color: #414142;
     border-top: 1px solid $border-color;
-    display: flex;
+
+    a {
+        padding: 10px;
+        display: flex;
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s ease-out;
+
+        &.active {
+            background: $active-color;
+            color: #FFF;
+
+            &:hover {
+                background: lighten($active-color, 10%);
+            }
+        }
+  
+        &:not(.active) {
+            &:hover,
+            &:focus {
+                background: rgba(100, 100, 100, 0.1);
+            }
+        }
+    }
 
     &:first-child {
         border-top: 0;
     }
-  
-    &.active,
-    &.selected {
-        color: #fff;
-        background-color: $active-color;
+
+    .thread-img {
+        @extend %user-img;
     }
 
-    img {
-        width: 2rem;
-        height: 2rem;
-        flex: 0 0 auto;
+    .thread-text {
+        overflow: hidden;
+
+        * {
+            line-height: 1rem;
+        }
     }
-}
-
-.media-object {
-    margin-top: 3px;
-
-    &.pull-left {
-        margin-right: 10px
-    }
-
-    &.pull-right {
-        margin-left: 10px
-    }
-}
-
-.media-body {
-    overflow: hidden;
-}
-
-.img-circle {
-    border-radius: 50%;
 }

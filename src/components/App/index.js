@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import ChatList from '../ChatList'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { messages } from '../../messages'
+import ChatList from '../ChatList'
+import ChatWrapper from '../ChatWrapper'
+import './index.css'
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +29,7 @@ class App extends Component {
 
     const msg = messages.threads.map(thr => {
       return {
+        id: thr.id,
         name: thr.recipients
           .map(rep => {
             return rep.name
@@ -40,10 +44,15 @@ class App extends Component {
   }
 
   render() {
+    const chat = ({ match }) => <ChatWrapper id={match.params.id} />
+
     return (
-      <div className="app-wrapper">
-        <ChatList messages={this.state.messages} />
-      </div>
+      <Router>
+        <div className="app-wrapper">
+          <ChatList messages={this.state.messages} />
+          <Route path="/threads/:id" component={chat} />
+        </div>
+      </Router>
     )
   }
 }

@@ -1,0 +1,57 @@
+@import '../../scss/variables';
+@import '../../scss/base';
+
+.chat-view {
+    height: 100vh;
+    width: 65vw;
+    overflow: hidden;
+    background: #FFF;
+    border-left: 1px solid #CCC;
+
+    @media (max-width: $mobile-view-width) {
+        width: 100vw;
+    }
+
+    .user-img {
+        @extend %user-img;
+    }
+
+    > * {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .chat-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #CCC;
+
+        h2 {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            display: inline-block;
+            padding: 0.75rem;
+            font-size: 1.5rem;
+            line-height: 1rem;
+            color: inherit;
+            font-weight: 300;
+            text-decoration: none;
+            color: #666;
+            border-radius: 50%;
+            transition: all 0.3s ease-out;
+
+            &:focus,
+            &:hover,
+            &:active {
+                background: #eee;
+            }
+
+            &:active {
+                box-shadow: 0 0 10px #e3e3e3, inset 0 0 5px #ddd;
+            }
+        }
+    }
+}

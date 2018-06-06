@@ -2,9 +2,17 @@
 
 .list-group {
     width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    transition: width 0.3s ease-in-out;
+    overflow: auto;
+
+    &.chat-opened {
+        width: 35vw;
+
+        @media (max-width: $mobile-view-width) {
+            width: 100%;
+            display: none;
+        }
+    }
 
     * {
         margin: 0;
@@ -12,26 +20,57 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: calc(100vh - 3.5rem);
+        overflow: scroll;
+    }
 }
 
 .list-group-header {
-    padding: 10px;
-}
+    padding: 0.75rem;
+    display: flex;
+    border-bottom: 1px solid $border-color;
 
-.form-control {
-    display: inline-block;
-    width: 100%;
-    min-height: 1.5625rem;
-    padding: 5px 10px;
-    font-size: 0.8125rem;
-    line-height: 1.5;
-    background-color: $chrome-color;
-    border: 1px solid $border-color;
-    border-radius: 4px;
-    outline: none;
-  
-    &:focus {
-        border-color: $focus-input-color;
-        box-shadow: 0 0 0 1px $focus-input-color;
+    .list-filter {
+        display: inline-block;
+        width: 100%;
+        height: 2rem;
+        padding: 5px 10px;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        background-color: $chrome-color;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        outline: none;
+    
+        &:focus {
+            border-color: $focus-input-color;
+            box-shadow: 0 0 0 1px $focus-input-color;
+        }
     }
-  }
+
+    button.new-message {
+        width: 3rem;
+        background: $button-color;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $dark-text-color;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+        &:active {
+            box-shadow: inset 0 0 5px #666;
+            background: darken($button-color, 5%);
+        }
+    }
+}
