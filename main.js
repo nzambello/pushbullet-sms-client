@@ -1,7 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-const path = require('path')
-const url = require('url')
-
 let win
 
 function createWindow() {
@@ -20,13 +17,7 @@ function createWindow() {
     win.loadURL('http://localhost:3000')
     win.webContents.openDevTools()
   } else {
-    win.loadURL(
-      url.format({
-        pathname: path.join(__dirname, '/build/index.html'),
-        protocol: 'file:',
-        slashes: true,
-      }),
-    )
+    win.loadURL('https://nzambello.github.io/pushbullet-sms-client/build')
   }
 
   win.on('closed', () => {

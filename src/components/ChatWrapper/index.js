@@ -23,9 +23,12 @@ class ChatWrapper extends Component {
       })
   }
 
+  sendSMS = data => {
+    console.log(data)
+  }
+
   componentDidMount() {
     this.fetchMessages()
-
     document.addEventListener('newMessage', this.fetchMessages)
   }
 
@@ -38,7 +41,7 @@ class ChatWrapper extends Component {
   }
 
   render() {
-    return <ChatView id={this.state.id} name="Il Balivo" messages={this.state.messages} />
+    return <ChatView id={this.state.id} messages={this.state.messages} sendSMS={this.sendSMS} />
   }
 }
 

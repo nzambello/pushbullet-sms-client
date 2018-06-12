@@ -9,6 +9,8 @@
     border-left: 1px solid #CCC;
     display: flex;
     flex-flow: column nowrap;
+    padding-bottom: 3.56rem;
+    position: relative;
 
     @media (max-width: $mobile-view-width) {
         width: 100vw;
@@ -67,5 +69,56 @@
     .chat-loading {
         padding: 2rem 1rem;
         text-align: center;
+    }
+
+    .chat-sms-new {
+        padding: 0.6rem 0.75rem;
+        display: flex;
+        height: 3.56rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #e3e3e3;
+
+        input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border-radius: 5px;
+            box-shadow: none;
+            border: 1px solid #CCC;
+            font-size: 0.75rem;
+        }
+
+        button {
+            width: 3rem;
+            background: $button-color;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            color: $dark-text-color;
+
+            &:focus,
+            &:active {
+                outline: none;
+            }
+
+            &:active {
+                box-shadow: inset 0 0 5px #666;
+                background: darken($button-color, 5%);
+            }
+
+            &.disabled {
+                opacity: 0.65;
+                pointer-events: none;
+
+                &:active {
+                    box-shadow: none;
+                    background: inherit;
+                }
+            }
+        }
     }
 }

@@ -1,17 +1,36 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import Spinner from 'react-spinkit'
+import faEnvelope from '@fortawesome/fontawesome-free-solid/faEnvelope'
 import faArrowLeft from '@fortawesome/fontawesome-free-solid/faArrowLeft'
+import Spinner from 'react-spinkit'
 import Message from '../Message'
 import group from '../ChatList/group.png'
 import userImg from '../ChatList/user.png'
 import './index.css'
 
 class ChatView extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      text: '',
+    }
+  }
+
   componentDidMount() {
     let list = document.querySelector('.chat-sms-list')
     list.scrollTop = list.scrollHeight
+  }
+
+  onTextChange = e => {
+    this.setState({ text: e.target.value })
+  }
+
+  sendSMS = () => {
+    let content = this.state.text
+    this.setState({ text: '' })
+    this.props.sendSMS(content)
   }
 
   render() {
@@ -29,6 +48,7 @@ class ChatView extends Component {
     }
 
     const user = JSON.parse(window.localStorage.getItem(this.props.id.toString()))
+    const btnClassName = this.state.text.length > 0 ? 'new-message' : 'new-message disabled'
 
     return (
       <div className="chat-view">
@@ -55,6 +75,12 @@ class ChatView extends Component {
               <Spinner name="line-scale" color="#4ab367" />
             </div>
           )}
+        </div>
+        <div className="chat-sms-new">
+          <input placeholder="Type a text message" onChange={this.onTextChange} value={this.state.text} />
+          <button className={btnClassName} title="Send message" onClick={this.sendSMS}>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </button>
         </div>
       </div>
     )

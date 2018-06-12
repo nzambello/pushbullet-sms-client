@@ -32,7 +32,7 @@ class ChatList extends Component {
     }
   }
 
-  componentDidMount() {
+  fetchThreads = () => {
     const token = this.props.token
     const getImageURL = recipients => {
       if (recipients.length === 1) {
@@ -72,6 +72,11 @@ class ChatList extends Component {
       .catch(error => {
         this.props.onError(error)
       })
+  }
+
+  componentDidMount() {
+    this.fetchThreads()
+    document.addEventListener('newMessage', this.fetchThreads)
   }
 
   onChangeFilter = e => {
