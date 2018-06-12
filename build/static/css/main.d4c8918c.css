@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+}
+img {
+    -webkit-user-select: text;
+}
+form,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-user-select: text;
+    -webkit-app-region: no-drag;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+}
+img {
+    -webkit-user-select: text;
+}
+form,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-user-select: text;
+    -webkit-app-region: no-drag;
+}
+.list-group-item .thread-img {
+    width: 2rem;
+    height: 2rem;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.list-group-item {
+    font-size: 0.75rem;
+    color: #414142;
+    border-top: 1px solid #ddd;
+}
+.list-group-item a {
+    padding: 10px;
+    display: -ms-flexbox;
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.list-group-item a.active {
+    background: #116cd6;
+    color: #fff;
+}
+.list-group-item a.active:hover {
+    background: #2c86ee;
+}
+.list-group-item a:not(.active):focus,
+.list-group-item a:not(.active):hover {
+    background: hsla(0, 0%, 39%, 0.1);
+}
+.list-group-item:first-child {
+    border-top: 0;
+}
+.list-group-item .thread-text {
+    overflow: hidden;
+}
+.list-group-item .thread-text * {
+    line-height: 1rem;
+}
+.list-group {
+    width: 100%;
+    -webkit-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+    overflow: auto;
+}
+.list-group.chat-opened {
+    width: 35vw;
+}
+@media (max-width: 576px) {
+    .list-group.chat-opened {
+        width: 100%;
+        display: none;
+    }
+}
+.list-group * {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.list-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: calc(100vh - 3.5rem);
+    overflow: scroll;
+}
+.list-group-header {
+    padding: 0.75rem;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.list-group-header .list-filter {
+    display: inline-block;
+    width: 100%;
+    height: 2rem;
+    padding: 5px 10px;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+.list-group-header .list-filter:focus {
+    border-color: #6db3fd;
+    -webkit-box-shadow: 0 0 0 1px #6db3fd;
+    box-shadow: 0 0 0 1px #6db3fd;
+}
+.list-group-header button.new-message {
+    width: 3rem;
+    background: #fc0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #3a3a3a;
+}
+.list-group-header button.new-message:active,
+.list-group-header button.new-message:focus {
+    outline: none;
+}
+.list-group-header button.new-message:active {
+    -webkit-box-shadow: inset 0 0 5px #666;
+    box-shadow: inset 0 0 5px #666;
+    background: #e6b800;
+}
+.message-wrapper {
+    padding: 0.5rem;
+}
+.message-wrapper .message-body {
+    width: 70%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+.message-wrapper .message-body.outgoing {
+    margin-left: auto;
+    text-align: right;
+    background: #eee;
+    border-bottom-right-radius: 0;
+}
+.message-wrapper .message-body.incoming {
+    margin-right: auto;
+    background: #559ff9;
+    color: #fff;
+    border-top-left-radius: 0;
+}
+.message-wrapper .message-body .message-time {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+}
+img {
+    -webkit-user-select: text;
+}
+form,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-user-select: text;
+    -webkit-app-region: no-drag;
+}
+.chat-view .user-img {
+    width: 2rem;
+    height: 2rem;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.chat-view {
+    height: 100vh;
+    width: 65vw;
+    overflow: hidden;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+}
+@media (max-width: 576px) {
+    .chat-view {
+        width: 100vw;
+    }
+}
+.chat-view > * {
+    padding: 0.75rem 1rem;
+}
+.chat-view .chat-header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+.chat-view .chat-header h2 {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+.chat-view .chat-header a {
+    display: inline-block;
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    color: inherit;
+    font-weight: 300;
+    text-decoration: none;
+    color: #666;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.chat-view .chat-header a:active,
+.chat-view .chat-header a:focus,
+.chat-view .chat-header a:hover {
+    background: #eee;
+}
+.chat-view .chat-header a:active {
+    -webkit-box-shadow: 0 0 10px #e3e3e3, inset 0 0 5px #ddd;
+    box-shadow: 0 0 10px #e3e3e3, inset 0 0 5px #ddd;
+}
+.chat-view .chat-sms-list {
+    overflow: scroll;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column-reverse;
+    flex-flow: column-reverse;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+}
+img {
+    -webkit-user-select: text;
+}
+form,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-user-select: text;
+    -webkit-app-region: no-drag;
+}
+.app-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+}
+/*# sourceMappingURL=main.d4c8918c.css.map*/
