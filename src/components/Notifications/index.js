@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { apiKey } from './secret.js'
 
 class Notifications extends Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class Notifications extends Component {
       websocket.close()
     }
 
-    websocket = new WebSocket(`wss://stream.pushbullet.com/websocket/${apiKey.token}`)
+    websocket = new WebSocket(`wss://stream.pushbullet.com/websocket/${this.props.token}`)
 
     websocket.onopen = () => {
       console.log('WebSocket open')
@@ -30,12 +29,15 @@ class Notifications extends Component {
       let data = JSON.parse(e.data)
       if (data.type === 'push' && data.push.notifications) {
         let message = data.push.notifications[0]
-        console.log(JSON.stringify(message))
 
-        new Notification(`Message from ${message.title}`, {
-          title: `Pushbullet: new message from ${message.title}`,
-          body: message.body,
-        })
+        if (message && message.title) {
+          new Notification(`Message from ${message.title}`, {
+            title: `Pushbullet: new message from ${message.title}`,
+            body: message.body,
+          })
+
+          document.dispatchEvent(new Event('newMessage'))
+        }
       }
     }
 

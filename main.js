@@ -9,6 +9,11 @@ function createWindow() {
     width: 1280,
     height: 720,
     title: 'Pushbullet SMS Client',
+    webPreferences: {
+      webSecurity: false,
+      allowRunningInsecureContent: true,
+      nodeIntegration: false,
+    },
   })
 
   if (process.env.NODE_ENV === 'development' || true) {

@@ -26,6 +26,7 @@
         display: flex;
         align-items: center;
         border-bottom: 1px solid #CCC;
+        min-height: 4.5rem;
 
         h2 {
             flex-grow: 1;
@@ -61,5 +62,10 @@
         overflow: scroll;
         display: flex;
         flex-flow: column-reverse;
+    }
+
+    .chat-loading {
+        padding: 2rem 1rem;
+        text-align: center;
     }
 }
