@@ -41,17 +41,18 @@
     "react-spinkit": "^3.0.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "build-js": "react-scripts build",
     "eject": "react-scripts eject",
-    "prettier-all": "prettier --write '**/*.{js,json,css}'",
+    "electron": "electron .",
+    "flow": "flow",
     "precommit": "lint-staged",
-    "flow": "flow"
+    "prettier-all": "prettier --write '**/*.{js,json,css}'",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "repository": {
     "type": "git",
