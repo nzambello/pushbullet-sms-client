@@ -26,7 +26,7 @@ We are currently using `create-react-app`, so it starts the app using default co
 ### Electron app
 With the react app running, to start electron:
 ```bash
-electron .
+yarn electron
 ```
 as the main file of `package.json` is electron main script.
 
