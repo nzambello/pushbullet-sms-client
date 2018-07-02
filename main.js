@@ -13,7 +13,7 @@ function createWindow() {
     },
   })
 
-  if (process.env.NODE_ENV === 'development' || true) {
+  if (process.env.NODE_ENV === 'development') {
     win.loadURL('http://localhost:3000')
     win.webContents.openDevTools()
   } else {

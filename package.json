@@ -4,6 +4,7 @@
   "description": "An Electron/React-based Pushbullet client for SMS",
   "private": true,
   "main": "main.js",
+  "productName": "Pushbullet SMS Client",
   "homepage": "./",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
